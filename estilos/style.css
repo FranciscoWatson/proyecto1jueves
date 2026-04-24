@@ -6,6 +6,9 @@ body {
     line-height: 1.6;
     margin: 0;
     padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 header {
@@ -51,10 +54,13 @@ nav ul li:not(:has(a)) {
 main {
     background-color: #ffffff;
     max-width: 800px;
+    width: calc(100% - 40px);
     margin: 30px auto;
     padding: 30px;
     border: 1px solid #cccccc;
     border-radius: 8px;
+    box-sizing: border-box;
+    flex: 1;
 }
 
 main h2 {
@@ -91,4 +97,33 @@ footer {
     padding: 15px;
     margin-top: 40px;
     font-size: 0.9em;
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 16px 10px;
+    }
+
+    header h1 {
+        font-size: 1.7em;
+    }
+
+    nav ul {
+        margin-top: 12px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 8px 0;
+    }
+
+    main {
+        width: calc(100% - 20px);
+        margin: 20px auto;
+        padding: 20px;
+    }
+
+    footer {
+        margin-top: 20px;
+    }
 }
